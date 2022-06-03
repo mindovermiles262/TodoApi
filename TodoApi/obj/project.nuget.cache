@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "usDQy+5A7UxaDPvxINr+dbrwIgjlIMfOQXAt+k0N/klf8EectqCLCwmzF/PFy12S+dzYRIo7HIzmcKHenYt+MQ==",
+  "dgSpecHash": "yjoeaV2/xRcoPmUayX1RZeCOQDtcvdNeB7+PqkGQl9DfJ/QxUbN82VFgUR0NBmVGX8LPcln/mKEfv4t5x3Zrfw==",
   "success": true,
   "projectFilePath": "/Users/aduss/code/dotnet/TodoApi/TodoApi/TodoApi.csproj",
   "expectedPackageFiles": [
@@ -34,7 +34,8 @@
     "/Users/aduss/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
     "/Users/aduss/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
     "/Users/aduss/.nuget/packages/system.diagnostics.diagnosticsource/4.4.1/system.diagnostics.diagnosticsource.4.4.1.nupkg.sha512",
-    "/Users/aduss/.nuget/packages/system.text.json/4.6.0/system.text.json.4.6.0.nupkg.sha512"
+    "/Users/aduss/.nuget/packages/system.text.json/4.6.0/system.text.json.4.6.0.nupkg.sha512",
+    "/Users/aduss/.nuget/packages/microsoft.netcore.app.host.osx-x64/5.0.17/microsoft.netcore.app.host.osx-x64.5.0.17.nupkg.sha512"
   ],
   "logs": []
 }

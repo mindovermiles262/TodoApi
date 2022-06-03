@@ -4,12 +4,10 @@ services:
     image: "gcr.io/datadoghq/agent:7"
     ports:
       - "8126/tcp"
-      # - "127.0.0.1:8126:8126/tcp "
     environment:
-      DD_API_KEY: d2a4a83e6025e18786c61af648bd289c
+      DD_API_KEY: "d2a4a83e6025e18786c61af648bd289c"
       DD_APM_ENABLED: "true"
       DD_APM_NON_LOCAL_TRAFFIC: "true"
-      DD_ENV: "Local"
       DD_LOGS_ENABLED: "true"
       DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL: "true"
       DD_CONTAINER_EXCLUDE: "name:todoapi-dd-agent-1"
@@ -26,10 +24,14 @@ services:
     depends_on:
       - dd-agent
     environment:
-      DD_RUNTIME_METRICS_ENABLED: "true"
-      DD_AGENT_HOST: dd-agent
+      DD_AGENT_HOST: "dd-agent"
       DD_TRACE_AGENT_PORT: 8126
-      DD_TRACE_DEBUG: "true"
+      DD_ENV: "local"
+      DD_VERSION: "20220601"
+      # - - - - - - -
+      DD_RUNTIME_METRICS_ENABLED: "true"
       DD_LOGS_INJECTION: "true"
-      DD_ENV: "Local"
-      DD_VERSION: 2022-06-01
+      CORECLR_ENABLE_PROFILING: "1"
+      CORECLR_PROFILER: "{846F5F1C-F9AE-4B07-969E-05C26BC060D8}"
+      CORECLR_PROFILER_PATH: "/opt/datadog/Datadog.Trace.ClrProfiler.Native.so"
+      DD_DOTNET_TRACER_HOME: "/opt/datadog"

@@ -13,31 +13,25 @@ namespace TodoApi
     {
         public static void Main(string[] args)
         {
+            Tracer.Configure(TracerSettings.FromDefaultSources());
+            
             Log.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()
                 .WriteTo.Console(new JsonFormatter(renderMessage: true))
                 .CreateLogger();
-            
+
             var builder = CreateHostBuilder(args);
             var app = builder.Build();
             app.Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args)
-        {
-            Environment.SetEnvironmentVariable("DD_RUNTIME_METRICS_ENABLED", "true");
-            Environment.SetEnvironmentVariable("DD_LOGS_INJECTION", "true");
-
-            var tracerSettings = TracerSettings.FromDefaultSources();
-            Tracer.Configure(tracerSettings);
-            
-            return Host.CreateDefaultBuilder(args)
-                .UseSerilog()
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseUrls("http://*:5000");
-                    webBuilder.UseStartup<Startup>();
-                });
-        }
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .UseSerilog()
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseUrls("http://*:5000");
+                webBuilder.UseStartup<Startup>();
+            });
     }
 }
